@@ -47,8 +47,9 @@ include('conexion.php');
       <div class="form-group">
      <p>Area *
 
-  <select>
-    <option value =1>Administración</option>
+  <select  name="area_id">
+    <option value =1>Administrativa y Financiera</option>
+    <option value =2>Ingeniería</option>
   </select>
       </p>
 
@@ -58,7 +59,7 @@ include('conexion.php');
 </div>
   <div class="checkbox-inline">
   <label>
-    <input type="checkbox" name="checkBoletin" value="33">
+    <input type="checkbox" name="checkBoletin" value="1">
     Deseo recibir boletín informativo
   </label>
 </div>
@@ -109,9 +110,26 @@ include('conexion.php');
       <td><?php echo $mostrar['nombre']?></td>
       <td><?php echo $mostrar['email']?></td>
       <td><?php echo $mostrar['sexo']?></td>
-      <td><?php echo $mostrar['area_id']?></td>
-      <td><?php echo $mostrar['boletin']?></td>
+      <td><?php 
+      if($mostrar['area_id']=='1'){
+        echo 'Administrativa y Financiera';
+      }
+      if($mostrar['area_id']=='2'){
+        echo 'Ingenieria';
+      }
+      ?></td>
+      <td><?php 
+      if($mostrar['boletin']=='1'){
+        echo 'Si';
+      }else{
+        echo 'No';
+      }
+      ?></td>
       <td><?php echo $mostrar['descripcion']?></td>
+      <td><form method ="GET" id="form_update" <?php echo $mostrar['id'] ?> action="modificarPHP.php">
+        <input type ="hidden" name="modificar" value="<?php echo $mostrar['id']; ?>">
+        <input type="submit" value="Modificar">
+      </form></td>
       <td><form method ="GET" id="form_eliminar" <?php echo $mostrar['id'] ?> action="indexPHP.php">
         <input type ="hidden" name="eliminar" value="<?php echo $mostrar['id']; ?>">
         <input type="submit" value="Eliminar">
@@ -133,6 +151,8 @@ echo 'nada';
     if (isset($_GETT['errorMensaje']) && $_GET['errorMensaje'] == '1' ||  $_GET['errorMensaje'] == '2'){
       
     }else{
+      
+      echo '<div class="alert alert-danger">Se ha guardado pero recuerda:</div>';
       echo '<div class="alert alert-danger">Debes elegirSexo.</div>';
     }
     }

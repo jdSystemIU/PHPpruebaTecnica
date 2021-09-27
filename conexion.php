@@ -13,6 +13,10 @@
             echo 'Escuchando eliminar';
             eliminar($conexion);
         }
+        if(isset($_GET['modificar'])){
+            echo 'Escuchando modificar';
+            modificar($conexion);
+        }
     }
 
     function insert($conexion){
@@ -27,7 +31,7 @@
         //haciendo conversion de boletion si es 1 es verdadero de lo contrario falso
         
         $query = "INSERT INTO `empleados` (`id`, `nombre`, `email`, `sexo`, `area_id`, `boletin`, `descripcion`) 
-        VALUES (NULL, '$nombre ', '$email', '$sexoCheckbox', '1', '$boletin', '$descripcion')";
+        VALUES (NULL, '$nombre ', '$email', '$sexoCheckbox', '$area_id', '$boletin', '$descripcion')";
         
         mysqli_query($conexion, $query);
         mysqli_close($conexion);
@@ -43,6 +47,22 @@
         mysqli_query($conexion, $queryEliminar);
         mysqli_close($conexion);
         header("Location: indexPHP.php");
+    }
+    function modificar($conexion){
+        $id = $_GET['id'];
+        $nombre = $_GET['nombre'];
+        $email = $_GET['email'];
+        $sexoCheckbox = $_GET['sexoCheckbox'];
+        $area_id = $_GET['area_id'];
+        $boletin = $_GET['checkBoletin'];
+        $descripcion = $_GET['descripcion'];
+
+        $queryModificar = "UPDATE `empleados` SET `nombre` = '$nombre', `email` = '$email', `sexo` = '$sexoCheckbox', 
+        `area_id` = '$area_id', `boletin` = '$boletin', `descripcion` = '$descripcion' WHERE `empleados`.`id` = $id";
+        
+        mysqli_query($conexion, $queryModificar);
+        mysqli_close($conexion);
+        //header("Location: indexPHP.php");
     }
     /*
     function mostrarDatos($conexion){
@@ -69,7 +89,7 @@
     if (isset($_POST['sexoCheckbox']) && $_POST['sexoCheckbox'] == 'M' ||  $_POST['sexoCheckbox'] == 'F'){
       
     }else{
-      echo '<div class="alert alert-danger">Debes elegirSexo.</div>';
+      echo '<div class="alert alert-danger">Debes elegir SEXO.</div>';
     }
     }
     }
