@@ -1,2 +1,2 @@
 # PHPpruebaTecnica
- Prueba realizada por Joseph David Gomez Castro
+Descargar y leer las instrucciones en el Readme.txt
