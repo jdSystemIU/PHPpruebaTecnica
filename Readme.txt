@@ -9,6 +9,7 @@ Instrucciones:
 4.Crear una carpeta en xampp adentro de la carpeta htdocs y llamarla "pruebaTecnica"
 5.Copiar y pegar en la carpeta "pruebaTecnica" de xampp o en el servidor 2 archivos, llamados:
 conexion.php
+modificarPHP.php
 indexPHP
 6.Iniciar xampp y luego ingresar desde el servidor a el archivo "indexPHP", posiblemente la ruta sea http://localhost/pruebaTecnica/indexPHP.php
 
