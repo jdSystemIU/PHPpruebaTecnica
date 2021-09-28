@@ -13,7 +13,7 @@ Instrucciones:
 ADVERTENCIA:
 DEBE:
 *Recordar activar xampp como administrador
-*Borrar el index.php y index.html de la carpeta de htdocs de xampp, carpetas ubicadas generalmente en el disco C: (C:\xampp\htdocs)
+*Borrar el index.php y index.html de la carpeta de htdocs de xampp, carpeta ubicada generalmente en el disco C: (C:\xampp\htdocs)
 *Obligatorio utilizar esta DB
 
 PostData: Explicacion del script SQL en el word "ExplicacionScriptDB", no es necesario leerlo, es simplemente documentación sobre las tablas y relaciones en la base de datos
