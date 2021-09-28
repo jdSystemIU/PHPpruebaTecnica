@@ -12,10 +12,12 @@ include('conexion.php');
 
 <script src="https://kit.fontawesome.com/e639b95e7d.js" crossorigin="anonymous"></script>
 
+<link rel="stylesheet" href="css/ajustes.css">
+
 </head>
  
-<body>
-  <form action="indexPHP.php" method="POST">
+<body >
+  <form action="indexPHP.php" id="formulario" method="POST">
 
   <h2><em>Crear empleado</em></h2>  
 
@@ -24,7 +26,7 @@ include('conexion.php');
 </div>
 <div class="form-group">
 
-  <div class="form-group">
+  <div class="form-group" id="groupNombre">
      <p>Nombre completo *<input type="text" name="nombre" placeholder="Nombre completo del empleado"></p>
   </div>
       <div class="form-group">
@@ -153,7 +155,7 @@ include('conexion.php');
 //array_push($sexoCheckbox, "Selecciona un sexo");
 
     if (isset($_GET['errorMensaje'])) {
-    echo 'entra guardar';
+    //echo 'entra guardar';
     if (isset($_GETT['errorMensaje']) && $_GET['errorMensaje'] == '1' ||  $_GET['errorMensaje'] == '2'){
       
     }else{
@@ -167,5 +169,9 @@ include('conexion.php');
 ?>
   </tbody>
 </table>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+
+<script src="js/jsValidator.js"> </script>
 </body>
 </html>
