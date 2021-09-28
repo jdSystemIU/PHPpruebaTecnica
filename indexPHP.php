@@ -125,11 +125,11 @@ include('conexion.php');
       }
       ?></td>
       <td><?php echo $mostrar['descripcion']?></td>
-      <td><form method ="GET" id="form_update" <?php echo $mostrar['id'] ?> action="modificarPHP.php">
+      <td><form method ="GET" id="form_update" action="modificarPHP.php">
         <input type ="hidden" name="id" value="<?php echo $mostrar['id']; ?>">
         <input type ="hidden" name="nombre" value="<?php echo $mostrar['nombre']; ?>">
 
-        <input type ="hidden" name="email" value="<?php echo $mostrar['nombre']; ?>">
+        <input type ="hidden" name="email" value="<?php echo $mostrar['email']; ?>">
 
         <input type ="hidden" name="area_id" value="<?php echo $mostrar['area_id']; ?>">
         <input type ="hidden" name="descripcion" value="<?php echo $mostrar['descripcion']; ?>">
@@ -137,7 +137,7 @@ include('conexion.php');
 
         <input type="submit" value="Modificar">
       </form></td>
-      <td><form method ="GET" id="form_eliminar" <?php echo $mostrar['id'] ?> action="indexPHP.php">
+      <td><form method ="GET" id="form_eliminar" action="indexPHP.php">
         <input type ="hidden" name="eliminar" value="<?php echo $mostrar['id']; ?>">
         <input type="submit" value="Eliminar">
       </form ></td>

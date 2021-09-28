@@ -52,15 +52,28 @@
         $id = $_GET['id'];
         $nombre = $_GET['nombre'];
         $email = $_GET['email'];
-        //$sexoCheckbox = $_GET['sexoCheckbox'];
-        $area_id = $_GET['area_id'];
+        $sexoCheckbox = $_GET['sexoCheckbox'];
+        //$area_id = $_GET['area_id'];
         //$boletin = $_GET['checkBoletin'];
         $descripcion = $_GET['descripcion'];
 
-        $queryModificar = "UPDATE `empleados` SET `nombre` = '$nombre', `email` = '$email', `sexo` = 'M', 
-        `area_id` = '$area_id', `boletin` = '1', `descripcion` = '$descripcion' WHERE `empleados`.`id` = $id";
-
-        mysqli_query($conexion, $queryModificar);
+        $queryModificar = "UPDATE `empleados` SET `nombre` = '".$nombre."', `email` = '".$email."', `sexo` = '".$sexoCheckbox."' WHERE `empleados`.`id` = '".$id."'";
+        //$queryModificar = "UPDATE `empleados` SET `nombre` = '$nombre', `email` = '$email', `sexo` = 'M', 
+        //`area_id` = '0', `boletin` = '1', `descripcion` = '$descripcion' WHERE `empleados`.`id` = $id";
+        $result = mysqli_query($conexion, $queryModificar);
+        if($result){
+            echo "<script language ='JavaScript'>
+            alert('Los datos se actualizaron');
+            location.assign('indexPHP.php');
+            </script>";
+        }else{
+            
+            echo "<script language ='JavaScript'>
+            alert('error al ejecutar la query en la database');
+            location.assign('indexPHP.php');
+            </script>";
+        }
+        
         mysqli_close($conexion);
         //header("Location: indexPHP.php");
     }
