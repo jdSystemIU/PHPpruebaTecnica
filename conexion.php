@@ -52,14 +52,14 @@
         $id = $_GET['id'];
         $nombre = $_GET['nombre'];
         $email = $_GET['email'];
-        $sexoCheckbox = $_GET['sexoCheckbox'];
+        //$sexoCheckbox = $_GET['sexoCheckbox'];
         $area_id = $_GET['area_id'];
-        $boletin = $_GET['checkBoletin'];
+        //$boletin = $_GET['checkBoletin'];
         $descripcion = $_GET['descripcion'];
 
-        $queryModificar = "UPDATE `empleados` SET `nombre` = '$nombre', `email` = '$email', `sexo` = '$sexoCheckbox', 
-        `area_id` = '$area_id', `boletin` = '$boletin', `descripcion` = '$descripcion' WHERE `empleados`.`id` = $id";
-        
+        $queryModificar = "UPDATE `empleados` SET `nombre` = '$nombre', `email` = '$email', `sexo` = 'M', 
+        `area_id` = '$area_id', `boletin` = 'Si', `descripcion` = '$descripcion' WHERE `empleados`.`id` = $id";
+
         mysqli_query($conexion, $queryModificar);
         mysqli_close($conexion);
         //header("Location: indexPHP.php");

@@ -15,7 +15,7 @@ include('conexion.php');
 </head>
  
 <body>
-  <form action="indexPHP.php" method="POST">
+  <form action="indexPHP.php".php" method="POST">
 
   <h2><em>MODIFICAR EMPLEADO</em></h2>  
 
@@ -25,10 +25,14 @@ include('conexion.php');
 <div class="alert alert-danger">Cuidado estas modificando información importante.</div>
 <div class="form-group">
 <?php
-$idEmpleado = $_GET['modificar'];//es la id llamada modificar que obtengo desde la URL
+$idEmpleado = $_GET['id'];//es la id llamada modificar que obtengo desde la URL
 $sql="SELECT * FROM `empleados` WHERE `id` = $idEmpleado";
 $result=mysqli_query($conexion,$sql);
 $mostrar=mysqli_fetch_array($result);
+
+//guardando las variables consultadas
+//$nombre = $mostrar['nombre'];
+//$email = $mostrar['email'];
 echo $idEmpleado;
 ?>
   <div class="form-group">
