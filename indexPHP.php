@@ -85,7 +85,7 @@ include('conexion.php');
      <input class="btn btn-primary" name="Guardar" type="submit" value="Guardar" />
   </form>
   <i class="fas fa-camera"></i>
-
+<p></p>
 </div>
 <h3><em>Lista de empleados</em></h3>  
 <table>
@@ -100,7 +100,6 @@ include('conexion.php');
   </thead>
   <tbody>
     <?php
-    echo "working";
     $sql="SELECT * FROM `empleados`";
     $result=mysqli_query($conexion,$sql);
     while($mostrar=mysqli_fetch_array($result)){
@@ -153,7 +152,6 @@ include('conexion.php');
 
 //array_push($sexoCheckbox, "Selecciona un sexo");
 
-echo 'nada';
     if (isset($_GET['errorMensaje'])) {
     echo 'entra guardar';
     if (isset($_GETT['errorMensaje']) && $_GET['errorMensaje'] == '1' ||  $_GET['errorMensaje'] == '2'){

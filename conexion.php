@@ -58,7 +58,7 @@
         $descripcion = $_GET['descripcion'];
 
         $queryModificar = "UPDATE `empleados` SET `nombre` = '$nombre', `email` = '$email', `sexo` = 'M', 
-        `area_id` = '$area_id', `boletin` = 'Si', `descripcion` = '$descripcion' WHERE `empleados`.`id` = $id";
+        `area_id` = '$area_id', `boletin` = '1', `descripcion` = '$descripcion' WHERE `empleados`.`id` = $id";
 
         mysqli_query($conexion, $queryModificar);
         mysqli_close($conexion);
